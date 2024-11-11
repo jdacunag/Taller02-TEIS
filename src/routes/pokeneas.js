@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const pokeneas = require('../data/pokeneasData');
+const os = require('os'); 
 
 router.get('/json', (req, res) => {
   const randomPokenea = pokeneas[Math.floor(Math.random() * pokeneas.length)];
-  const containerId = 'container_id_desconocido';  // Valor fijo para containerId
+  const containerId = os.hostname();  
   res.json({
     id: randomPokenea.id,
     nombre: randomPokenea.nombre,
@@ -16,7 +17,7 @@ router.get('/json', (req, res) => {
 
 router.get('/imagen', (req, res) => {
   const randomPokenea = pokeneas[Math.floor(Math.random() * pokeneas.length)];
-  const containerId = 'container_id_desconocido';  // Valor fijo para containerId
+  const containerId = os.hostname();  
   res.send(`
     <div style="text-align: center;">
       <img src="${randomPokenea.imagen}" alt="${randomPokenea.nombre}" width="200"/>
