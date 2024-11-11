@@ -5,4 +5,4 @@ const app = express();
 app.use('/pokeneas', pokeneasRouter);
 
 const PORT = 80;
-app.listen(PORT, () => console.log(`Servidor escuchando en el puerto ${PORT}`));
+app.listen(PORT, () => console.log(`Server listening at port ${PORT}`));
