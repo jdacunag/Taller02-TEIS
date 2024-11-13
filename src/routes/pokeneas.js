@@ -8,9 +8,9 @@ router.get('/json', (req, res) => {
   const containerId = os.hostname();  
   res.json({
     id: randomPokenea.id,
-    nombre: randomPokenea.nombre,
-    altura: randomPokenea.altura,
-    habilidad: randomPokenea.habilidad,
+    name: randomPokenea.name,
+    height: randomPokenea.height,
+    ability: randomPokenea.ability,
     containerId: containerId
   });
 });
@@ -20,11 +20,11 @@ router.get('/imagen', (req, res) => {
   const containerId = os.hostname();  
   res.send(`
     <div style="text-align: center;">
-      <img src="${randomPokenea.imagen}" alt="${randomPokenea.nombre}" width="200"/>
-      <p><em>${randomPokenea.fraseFilosofica}</em></p>
+      <img src="${randomPokenea.image}" alt="${randomPokenea.name}" width="200"/>
+      <p><em>${randomPokenea.philosophicalQuote}</em></p>
       <p>Container ID: ${containerId}</p>
     </div>
   `);
 });
 
-module.exports = router;
+module.exports = router
